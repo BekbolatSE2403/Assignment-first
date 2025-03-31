@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class problem3 {
+public class Problem3 {
     /**
      * Complexity: O(n)
      * This method defines the number is prime or composite

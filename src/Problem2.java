@@ -1,22 +1,19 @@
 import java.util.Scanner;
 
-public class problem1 {
+public class Problem2{
     /**
-     * Returns the minimum element of the array
-     * O(n) complexity
-     * @param arr The array to find the minimum from.
-     * @return The min element.
+     *  Finding the average of given array
+     * @param arr Array contains all the numbers.
+     * @return The average of given numbers
+     * Time complexity: O(n)
      */
-    public static int minimum(int[] arr) {
-        int min = arr[0];
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
-            }
+    public static double average(int[] arr){
+        double sum=0;
+        for (int i = 0; i < arr.length; i++){
+            sum += arr[i];
         }
-        return min;
+        return sum / arr.length;
     }
-
     /**
      * Measures execution time of a function in milliseconds.
      * @param r The function to be executed.
@@ -28,17 +25,18 @@ public class problem1 {
         System.out.println("Time taken: " + (endTime - startTime) / 1000000.0 + " ms");
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
+        for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
+        System.out.println(average(arr));
 
-        // Measure time for finding minimum
         measureTime(() -> {
-            System.out.println(minimum(arr));
+            System.out.println("Average: " + average(arr));
         });
     }
+
 }
